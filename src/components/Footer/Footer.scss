@@ -1,0 +1,33 @@
+@import '../../styles/variables';
+
+.footer {
+  grid-area: footer;
+  display: none;
+
+  @media (max-width: $breakpoint-mobile) {
+    display: flex;
+    background-color: var(--bg-color-darkened);
+    position: sticky;
+    bottom: 0;
+    height: $footer-height;
+    box-shadow: $sidebar-shadow;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+
+    a {
+      color: var(--lighter-font-color);
+      text-decoration: none;
+    }
+
+    .selected {
+      path {
+        fill: $secondary-color;
+      }
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+}

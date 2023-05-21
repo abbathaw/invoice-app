@@ -1,0 +1,78 @@
+@import 'variables';
+
+a {
+  color: $font-color-light;
+  text-decoration: none;
+}
+
+a:hover {
+  color: lighten($font-color-light, 15%);
+  text-decoration: none;
+}
+
+.button {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: 1px solid var(--font-color);
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid $secondary-color;
+  }
+}
+
+.primary {
+  background-color: $secondary-color;
+  color: $primary-color;
+  padding: 0.8rem;
+  font-weight: 800;
+  border: none;
+  &:hover {
+    background-color: lighten($secondary-color, 10%);
+    border: none;
+  }
+}
+
+.secondary {
+  background-color: transparent;
+  padding: 0.8rem;
+  font-weight: 800;
+  border: 1px solid $secondary-color;
+  &:hover {
+    background-color: lighten($secondary-color, 30%);
+  }
+}
+
+.button-group {
+  display: flex;
+  gap: 0.8rem;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  animation: rotate 1s linear infinite;
+}
+
+.flex-space {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  margin: 10px 0;
+  .label {
+    margin-top: 2px;
+    font-size: 0.8rem;
+    font-weight: 300;
+  }
+}
