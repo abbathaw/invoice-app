@@ -1,17 +1,17 @@
-import { useEffect, useState } from 'react';
-import { getInvoice } from '../api/getInvoice';
+import { useQuery } from '@apollo/client';
+import { GET_INVOICE } from '../api/getInvoice';
 import { Invoice as InvoiceModel } from '../types';
 import Invoice from '../components/Invoice';
+import Loading from '../components/Loading.tsx';
+import Error from '../components/Error.tsx';
+
 const InvoicePage = () => {
-  const [invoice, setInvoice] = useState<InvoiceModel | null>(null);
+  const { loading, error, data } = useQuery(GET_INVOICE);
 
-  useEffect(() => {
-    getInvoice().then(setInvoice);
-  }, []);
+  if (loading) return <Loading />;
+  if (error) return <Error />;
 
-  if (!invoice) {
-    return <div>Loading...</div>;
-  }
+  const invoice: InvoiceModel = data.getInvoice;
 
   return <Invoice invoice={invoice} />;
 };

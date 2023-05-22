@@ -6,13 +6,17 @@ export interface CostItem {
 }
 
 export interface Phase {
+  id: string;
   name: string;
   costItems: CostItem[];
   discountOrFee: number;
 }
 
 export interface Invoice {
+  project: {
+    id: string;
+    name: string;
+  };
   phases: Phase[];
   totalDiscountOrFee: number;
-  total: number;
 }

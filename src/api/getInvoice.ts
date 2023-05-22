@@ -1,5 +1,24 @@
-import { mockInvoice } from './mockInvoiceData.ts';
+import { gql } from '@apollo/client';
 
-export const getInvoice = async () => {
-  return new Promise((resolve) => setTimeout(() => resolve(mockInvoice), 500));
-};
+export const GET_INVOICE = gql`
+  query GetInvoice {
+    getInvoice {
+      project {
+        id
+        name
+      }
+      phases {
+        id
+        name
+        costItems {
+          name
+          pricePerUnit
+          units
+          taxRate
+        }
+        discountOrFee
+      }
+      totalDiscountOrFee
+    }
+  }
+`;

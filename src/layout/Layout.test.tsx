@@ -23,7 +23,7 @@ describe('Layout', () => {
       </BrowserRouter>,
     );
 
-    expect(screen.getByText('Invoices')).toBeInTheDocument();
+    expect(screen.getByText('Invoices App')).toBeInTheDocument();
     getNavLinks().forEach((navLink) => {
       const links = screen.getAllByRole('link', { name: navLink.label });
       links.forEach((link) => {

@@ -1,12 +1,13 @@
-import React from 'react';
 import { CostItem as CostItemModel } from '../../types';
+import { formatPrice } from '../../utils/formatter.ts';
 
-const CostItem: React.FC<{ costItem: CostItemModel }> = ({ costItem }) => (
-  <div>
-    <h3>{costItem.name}</h3>
-    <div>Price per unit: {costItem.pricePerUnit}</div>
-    <div>Units: {costItem.units}</div>
-    <div>Tax rate: {costItem.taxRate}</div>
+const CostItem = ({ costItem }: { costItem: CostItemModel }) => (
+  <div className="table-row">
+    <h3 className="row-name-icon">{costItem.name}</h3>
+    <div>{costItem.units}</div>
+    <div>{formatPrice(costItem.pricePerUnit)}</div>
+    <div>{costItem.taxRate * 100}%</div>
+    <div>{formatPrice(costItem.pricePerUnit * costItem.units)}</div>
   </div>
 );
 

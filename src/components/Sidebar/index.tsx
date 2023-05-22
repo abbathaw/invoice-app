@@ -13,7 +13,7 @@ const Sidebar = () => {
         <Link to={'/'}>
           <div className="logo">
             <FontAwesomeIcon icon={faWarehouse} />
-            <h1>Invoices</h1>
+            <h1>Invoices App</h1>
           </div>
         </Link>
       </div>

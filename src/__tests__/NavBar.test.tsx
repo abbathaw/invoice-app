@@ -10,6 +10,6 @@ describe('NavBar', () => {
         <NavBar />
       </BrowserRouter>,
     );
-    expect(getByText('Invoice')).toBeInTheDocument();
+    expect(getByText('Invoices App')).toBeInTheDocument();
   });
 });

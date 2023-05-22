@@ -10,6 +10,12 @@ a:hover {
   text-decoration: none;
 }
 
+.title {
+  font-weight: 800;
+  font-size: 1.3rem;
+  margin: 1rem 0;
+}
+
 .button {
   padding: 0.5rem;
   border-radius: 0.5rem;
@@ -75,4 +81,8 @@ a:hover {
     font-size: 0.8rem;
     font-weight: 300;
   }
+}
+
+.bold {
+  font-weight: 600;
 }
